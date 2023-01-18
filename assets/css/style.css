@@ -3,12 +3,9 @@
 }
 
 header {
+    display: flex;
+    justify-content: space-evenly;
     height: 8%;
-}
-
-#time {
-    font-size: 50px;
-    background-color: pink;
 }
 
 #highScores {
@@ -16,20 +13,8 @@ header {
     font-size: 50px;
 }
 
-#start {
-    color: white;
-    background-color: rgb(136, 11, 209);
-    font-size: 75px;
-    width: 15%;
-    border-radius: 12px;
-}
-
-#start:hover {
-    cursor: pointer;
-}
-
-#start:active {
-    transform: scale(.98);
+#time {
+    font-size: 50px;
 }
 
 .questionContainer {
@@ -38,6 +23,32 @@ header {
     align-items: center;
     background-color: var(--smoke);
     height: 40%;
+}
+
+#questions {
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-size: 70px;
+}
+
+#start,
+#reset {
+    color: white;
+    background-color: rgb(136, 11, 209);
+    font-size: 75px;
+    width: 220px;
+    border-radius: 12px;
+    /* margin-top: 5%; */
+}
+
+#start:hover,
+#reset:hover {
+    cursor: pointer;
+}
+
+#start:active,
+#reset:active {
+    transform: scale(.98);
 }
 
 .answerContainer {
@@ -61,6 +72,7 @@ header {
     width: 45%;
     height: 200px;
     border-radius: 12px;
+    padding-left: 10px;
 }
 
 .choices:hover {
