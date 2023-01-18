@@ -34,7 +34,8 @@ header {
 
 .questionContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     background-color: var(--smoke);
     height: 40%;
 }
@@ -44,6 +45,7 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-end;
+    justify-content: space-around;
     background-color: var(--smoke);
     width: 100%;
 }
@@ -56,7 +58,7 @@ header {
     margin: 20px;
     color: white;
     background-color: blue;
-    width: 48%;
+    width: 45%;
     height: 200px;
     border-radius: 12px;
 }
