@@ -33,8 +33,6 @@ header {
 }
 
 .questionContainer {
-    display: flex;
-    justify-content: center;
     background-color: var(--smoke);
     height: 40%;
 }
@@ -67,4 +65,20 @@ header {
 
 .choices:active {
     transform: scale(.98);
+}
+
+#choice1 {
+    background-color: blue;
+}
+
+#choice2 {
+    background-color: rgb(211, 2, 2);
+}
+
+#choice3 {
+    background-color: green;
+}
+
+#choice4 {
+    background-color: rgb(218, 218, 0);
 }
