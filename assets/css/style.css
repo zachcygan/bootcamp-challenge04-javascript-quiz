@@ -33,6 +33,8 @@ header {
 }
 
 .questionContainer {
+    display: flex;
+    justify-content: center;
     background-color: var(--smoke);
     height: 40%;
 }
