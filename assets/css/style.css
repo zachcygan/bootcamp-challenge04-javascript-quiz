@@ -1,0 +1,65 @@
+header {
+    height: 8%;
+}
+
+#time {
+    text-align: end;
+    font-size: 50px;
+}
+
+#highScores {
+    text-decoration: underline;
+    display: inline-block;
+    font-size: 50px;
+}
+
+#start {
+    justify-content: center;
+    background-color: rgb(136, 11, 209);
+    font-size: 75px;
+    width: 20%;
+    border-radius: 12px;
+}
+
+#start:hover {
+    cursor: pointer;
+}
+
+#start:active {
+    transform: scale(.98);
+}
+
+.questionContainer {
+    display: flex;
+    background-color: pink;
+    height: 40%;
+    /* width: 100%; */
+}
+
+.answerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    background-color: orange;
+    width: 100%;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    margin: 20px;
+    background-color: blue;
+    width: 48%;
+    height: 200px;
+    border-radius: 12px;
+}
+
+.choices:hover {
+    cursor: pointer;
+}
+
+.choices:active {
+    transform: scale(.98);
+}
