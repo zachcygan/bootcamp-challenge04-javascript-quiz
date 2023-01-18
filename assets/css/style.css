@@ -1,23 +1,26 @@
+:root {
+    --smoke: whitesmoke;
+}
+
 header {
     height: 8%;
 }
 
 #time {
-    text-align: end;
     font-size: 50px;
+    background-color: pink;
 }
 
 #highScores {
     text-decoration: underline;
-    display: inline-block;
     font-size: 50px;
 }
 
 #start {
-    justify-content: center;
+    color: white;
     background-color: rgb(136, 11, 209);
     font-size: 75px;
-    width: 20%;
+    width: 15%;
     border-radius: 12px;
 }
 
@@ -31,9 +34,9 @@ header {
 
 .questionContainer {
     display: flex;
-    background-color: pink;
+    justify-content: center;
+    background-color: var(--smoke);
     height: 40%;
-    /* width: 100%; */
 }
 
 .answerContainer {
@@ -41,15 +44,17 @@ header {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-end;
-    background-color: orange;
+    background-color: var(--smoke);
     width: 100%;
 }
 
 .choices {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    align-items: center;
     font-size: 60px;
     margin: 20px;
+    color: white;
     background-color: blue;
     width: 48%;
     height: 200px;
