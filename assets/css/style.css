@@ -48,8 +48,7 @@ header {
     color: white;
     background-color: var(--purp);
     font-size: 3rem;
-    width: 40%;
-    margin: 1%;
+    width: 100%;
     border-radius: 12px;
 }
 

@@ -6,7 +6,7 @@ var questions = document.getElementById(`questions`);
 var choice1 = document.getElementById(`choice1`);
 
 
-time.textContent = `Time: `;
+time.textContent = `Time: 0`;
 questions.textContent = `When you are ready, click the start button to begin.`
 choice1.textContent = `test`
 
@@ -14,7 +14,7 @@ start.addEventListener(`click`, function() {
     var timeRemaining = 60;
     
     var timeInterval = setInterval(function() {
-        if (timeRemaining > 1) {
+        if (timeRemaining > 0) {
             time.textContent = `Time: ` + timeRemaining;
             timeRemaining--;
         } else {
