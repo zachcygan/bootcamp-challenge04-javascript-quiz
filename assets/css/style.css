@@ -36,9 +36,9 @@ header {
 }
 
 #questions {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: .5rem;
     font-size: 4.5rem;
+    background-color: pink;
 }
 
 #start,
@@ -70,8 +70,10 @@ header {
     flex-grow: 1;
     flex-direction: column;
     align-items: end;
-    width: 15%;
+    width: 20%;
     float: right;
+    background-color: pink;
+    padding-top: 4rem;
 }
 
 .answerContainer {
