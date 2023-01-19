@@ -33,12 +33,13 @@ header {
     background-color: var(--smoke);
     width: 80%;
     float: left;
+
 }
 
 #questions {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: .5rem;
     font-size: 4.5rem;
+    width: 80%;
 }
 
 #start {
@@ -55,7 +56,7 @@ header {
     background-color: var(--purp);
     font-size: 3rem;
     width: 100%;
-    margin: 1%;
+    padding: 1%;
     border-radius: 12px;
 }
 
@@ -76,8 +77,10 @@ header {
     flex-grow: 1;
     flex-direction: column;
     align-items: end;
-    width: 15%;
+    width: 20%;
     float: right;
+    background-color: pink;
+    padding-top: 4rem;
 }
 
 .answerContainer {
