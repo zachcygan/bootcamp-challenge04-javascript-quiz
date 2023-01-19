@@ -1,17 +1,25 @@
 :root {
     --smoke: whitesmoke;
+    --purp: rgb(136, 11, 209);
+}
+
+body {
+    background-color: var(--smoke);
 }
 
 header {
     display: flex;
     justify-content: space-evenly;
-    margin: 2%;
+    padding: 2%;
+    background-color: white;
+    border: 3px var(--purp) solid;
 }
 
 #highScores,
 #time,
 #score {
     font-size: 50px;
+
 }
 
 .questionContainer {
@@ -19,24 +27,25 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: var(--smoke);
-    height: 40%;
     width: 80%;
     float: left;
 }
 
 #questions {
     padding-top: 5%;
-    padding-bottom: 6%;
-    font-size: 70px;
+    padding-bottom: 5%;
+    font-size: 4.5rem;
 }
 
 #start,
 #reset,
 #stop {
+    display: block;
     color: white;
-    background-color: rgb(136, 11, 209);
-    font-size: 75px;
-    width: 220px;
+    background-color: var(--purp);
+    font-size: 3rem;
+    width: 40%;
+    margin: 1%;
     border-radius: 12px;
 }
 
@@ -57,8 +66,7 @@ header {
     flex-grow: 1;
     flex-direction: column;
     align-items: end;
-    background-color: var(--smoke);
-    width: 20%;
+    width: 15%;
     float: right;
 }
 
@@ -77,13 +85,13 @@ header {
     justify-content: start;
     align-items: center;
     font-size: 60px;
-    margin: 20px;
+    margin: 1%;
     color: white;
     background-color: blue;
     width: 45%;
     height: 200px;
     border-radius: 12px;
-    padding-left: 10px;
+    padding-left: 1%;
 }
 
 .choices:hover {
