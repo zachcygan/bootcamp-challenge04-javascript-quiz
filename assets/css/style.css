@@ -42,12 +42,6 @@ header {
     width: 80%;
 }
 
-#start {
-    display: flex;
-    flex-wrap: wrap;
-    height: 10rem;
-}
-
 #start,
 #reset,
 #stop {

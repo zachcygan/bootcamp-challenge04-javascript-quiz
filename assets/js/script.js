@@ -8,21 +8,36 @@ var questions = document.getElementById(`questions`);
 var choice1 = document.getElementById(`choice1`);
 
 
-time.textContent = `Time: 0`;
+time.textContent = `Time: `;
 questions.textContent = `When you are ready, click the start button to begin.`
 
-start.addEventListener(`click`, function() {
-    var timeRemaining = 60;
-    
-    var timeInterval = setInterval(function() {
-        if (timeRemaining > 0) {
-            time.textContent = `Time: ` + timeRemaining;
-            timeRemaining--;
-        } else {
-            time.textContent = `Time: 0`;
-            clearInterval(timeInterval);
-        }
-    }, 1000)
+var timeRemaining = 60;
+time.textContent = `Time: ${timeRemaining}`;
+var timeInterval;
 
-    return time;
-});
+start.addEventListener('click', startTimer);
+stop.addEventListener('click', stopTimer);
+reset.addEventListener(`click`, resetTimer);
+
+
+function startTimer() {
+	timeInterval = setInterval(function() {
+		time.textContent = `Time: ${timeRemaining}`;
+        timeRemaining--;
+    
+    if (timeRemaining < 0) {
+        time.textContent = `Time: 0`
+        clearInterval(timerInterval)
+    }
+	}, 1000);
+};
+
+function stopTimer() {
+	clearInterval(timeInterval);
+};
+
+function resetTimer() {
+    clearInterval(timeInterval);
+    timeRemaining = 60;
+    time.textContent = `Time: 60`
+}
