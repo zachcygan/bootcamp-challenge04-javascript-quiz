@@ -51,6 +51,7 @@ header {
     font-size: 3rem;
     width: 100%;
     padding: 1%;
+    margin-bottom: 1%;
     border-radius: 12px;
 }
 
@@ -73,7 +74,6 @@ header {
     align-items: end;
     width: 20%;
     float: right;
-    background-color: pink;
     padding-top: 4rem;
 }
 
