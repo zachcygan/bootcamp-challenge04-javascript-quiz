@@ -8,11 +8,9 @@ header {
     margin: 2%;
 }
 
-#highScores {
-    font-size: 50px;
-}
-
-#time {
+#highScores,
+#time,
+#score {
     font-size: 50px;
 }
 
@@ -23,16 +21,18 @@ header {
     background-color: var(--smoke);
     height: 40%;
     width: 80%;
+    float: left;
 }
 
 #questions {
     padding-top: 5%;
-    padding-bottom: 5%;
+    padding-bottom: 6%;
     font-size: 70px;
 }
 
 #start,
-#reset {
+#reset,
+#stop {
     color: white;
     background-color: rgb(136, 11, 209);
     font-size: 75px;
@@ -41,18 +41,22 @@ header {
 }
 
 #start:hover,
-#reset:hover {
+#reset:hover,
+#stop:hover {
     cursor: pointer;
 }
 
 #start:active,
-#reset:active {
+#reset:active,
+#stop:active {
     transform: scale(.98);
 }
 
 .aside {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
+    align-items: end;
     background-color: var(--smoke);
     width: 20%;
     float: right;
