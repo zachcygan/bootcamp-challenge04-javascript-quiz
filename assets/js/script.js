@@ -18,7 +18,7 @@ reset.addEventListener(`click`, resetTimer);
 
 var questions = [
     {
-        question: `Inside which HTML element do we put the JavaScript?`,
+        prompt: `Inside which HTML element do we put the JavaScript?`,
         choices: {
             1: `<scripting>`,
             2: `<js>`,
@@ -29,7 +29,7 @@ var questions = [
     },
 
     {
-        question: `What is 2+1?`,
+        prompt: `What is 2+1?`,
         choices: {
             1: `4`,
             2: `15`,
@@ -40,30 +40,32 @@ var questions = [
     }
 ]
 
-function displayQuestions(q) {
-    var choice1 = document.getElementById(`choice1`);
-    var choice2 = document.getElementById(`choice2`);
-    var choice3 = document.getElementById(`choice3`);
-    var choice4 = document.getElementById(`choice4`);
-    var choicesClass = document.querySelectorAll(`.choices`) 
-    var index = 0;
+var choice1 = document.getElementById(`choice1`);
+var choice2 = document.getElementById(`choice2`);
+var choice3 = document.getElementById(`choice3`);
+var choice4 = document.getElementById(`choice4`);
 
-    questionsArea.textContent = questions[index].question;
+var questionNumber = 0;
+choice1.addEventListener(`click`, displayQuestions(questionNumber))
+
+console.log(displayQuestions(0))
+
+function displayQuestions(index) {
+    console.log(index)
+    questionsArea.textContent = questions[index][prompt];
     choice1.textContent = questions[index].choices[1];
     choice2.textContent = questions[index].choices[2];
     choice3.textContent = questions[index].choices[3];
     choice4.textContent = questions[index].choices[4];
 }
 
-console.log(questions[0].choices[3])
-console.log(questions[1].choices[2])
 
 // used https://code.mu/en/javascript/book/prime/timers/stop-button/ for stopping interval in different 
 // function while making the var global
 function startTimer() {
 	timeInterval = setInterval(function() {
-		time.textContent = `Time: ${timeRemaining}`;
         timeRemaining--;
+		time.textContent = `Time: ${timeRemaining}`;
     
     if (timeRemaining < 0) {
         time.textContent = `Time: 0`
@@ -72,7 +74,7 @@ function startTimer() {
     // start.disabled = true;
 	}, 1000);
 
-    displayQuestions();
+    displayQuestions(questionNumber);
 };
 
 function stopTimer() {
@@ -85,4 +87,8 @@ function resetTimer() {
     timeRemaining = 60;
     time.textContent = `Time: 60`
     // need to include reseting the game as well, not just the timer
+    choice1.textContent = ``;
+    choice2.textContent = ``;
+    choice3.textContent = ``; 
+    choice4.textContent = ``; 
 }
