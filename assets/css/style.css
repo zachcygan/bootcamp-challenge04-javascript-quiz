@@ -42,9 +42,9 @@ header {
     width: 80%;
 }
 
-#start,
+#startButton,
 #reset,
-#stop {
+#stopButton {
     display: block;
     color: white;
     background-color: var(--purp);
@@ -55,15 +55,15 @@ header {
     border-radius: 12px;
 }
 
-#start:hover,
+#startButton:hover,
 #reset:hover,
-#stop:hover {
+#stopButton:hover {
     cursor: pointer;
 }
 
-#start:active,
+#startButton:active,
 #reset:active,
-#stop:active {
+#stopButton:active {
     transform: scale(.98);
 }
 
