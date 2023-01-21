@@ -33,7 +33,7 @@ header {
     background-color: var(--smoke);
     width: 80%;
     float: left;
-
+    height: 50vh;
 }
 
 #questions {
@@ -85,6 +85,7 @@ header {
     justify-content: space-around;
     background-color: var(--smoke);
     width: 100%;
+
 }
 
 .choices {
@@ -123,4 +124,15 @@ header {
 
 #choice4 {
     background-color: var(--yellow);
+}
+
+form {
+    padding: 2%;
+    background-color: white;
+    border: 3px var(--purp) solid;
+    /* position: absolute; */
+}
+
+.hide {
+    display: none;
 }

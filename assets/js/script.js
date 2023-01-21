@@ -7,6 +7,9 @@ var reset = document.getElementById(`reset`);
 var questionsArea = document.getElementById(`questions`);
 var answerContainer = document.querySelector(`.answerContainer`);
 var playing = false;
+// if there is no local storage, give an empty array
+var highScoresArr = JSON.parse(localStorage.getItem(`highScoresArr`)) || [];
+
 
 var timeRemaining = 60;
 time.textContent = `Time: ${timeRemaining}`;
@@ -39,7 +42,7 @@ var questions = [
             3: `3`,
             4: `0`,
         },
-        answer: `3`,
+        answer: `3`
     },
 
     {
@@ -75,12 +78,36 @@ function displayQuestions(index) {
         choice2.textContent = questions[index].choice[2];
         choice3.textContent = questions[index].choice[3];
         choice4.textContent = questions[index].choice[4];
-    }
-
-    if (index > questions.length) {
+    } else {
         clearInterval(timeInterval);
+        questionsArea.textContent = `Done! Your final score is ${score}/3`;
+        // answerContainer.style.display = `none`;
+        // choice1.textContent = ``;
+        // choice2.textContent = ``;
+        // choice3.textContent = ``; 
+        // choice4.textContent = ``;
+        document.getElementById(`highScoreForm`).classList.remove(`hide`);
     }
 }
+
+var submitButton = document.getElementById(`submitButton`);
+submitButton.addEventListener(`click`, function(event) {
+    event.preventDefault();
+    var initials = document.getElementById(`initials`).value;
+    var scoreOb = {
+        initials, score
+    }
+    highScoresArr.push(scoreOb)
+    localStorage.setItem(`highScoresArr`, JSON.stringify(highScoresArr));
+})
+
+// function displayScores() {
+//     var highScoresArr = JSON.parse(localStorage.getItem(`highScoresArr`));
+//     console.log(highScoresArr);
+// }
+
+
+
 
 // if event.target.value() === questions[index].answer
 
@@ -98,7 +125,7 @@ function startTimer() {
     // start.disabled = true;
 	}, 1000);
     playing = true;
-    displayQuestions(0);
+    displayQuestions(index);
 };
 
 function stopTimer() {
@@ -123,33 +150,18 @@ function resetTimer() {
 function nextQuestion(event) {
     if (playing) {
         var userChoice = event.target;
-        console.log(typeof userChoice.textContent)
-        console.log(typeof questions[0].answer)
-        
+        console.log(userChoice.textContent)
+        console.log(correctAnswers[index])
 
         if (userChoice.matches('.choices')) {
+            if (userChoice.textContent == correctAnswers[index]) {
+                score++;
+                scoreEl.textContent = `Score: ${score}`
+                console.log(`true`)
+            }highScoresArr
             index++;
             displayQuestions(index);
         } 
-
-        if (userChoice.textContent === questions[index].answer) {
-            score++;
-            scoreEl.textContent = `Score: ${score}`
-        }
-
-        if (userChoice.textContent === questions[index].answer) {
-            console.log(`true`)
-        }
-
-        if (index > questions.length) {
-            questionsArea.textContent = `Done! Your final score is ${score}/3`;
-            choice1.textContent = ``;
-            choice2.textContent = ``;
-            choice3.textContent = ``; 
-            choice4.textContent = ``;
-        }
-
-        console.log(score)
     }
 
 }
