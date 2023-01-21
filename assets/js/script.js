@@ -34,7 +34,7 @@ var questions = [
         id: 1,
         question: `What is 2+1?`,
         choice: {
-            1: `4`,
+            1: `2`,
             2: `15`,
             3: `3`,
             4: `0`,
@@ -117,6 +117,7 @@ function resetTimer() {
     choice4.textContent = ``;
     scoreEl.textContent = `Score:`;
     index = 0;
+    score = 0;
 }
 
 function nextQuestion(event) {
@@ -124,24 +125,33 @@ function nextQuestion(event) {
         var userChoice = event.target;
         console.log(typeof userChoice.textContent)
         console.log(typeof questions[0].answer)
-        console.log(score)
+        
 
         if (userChoice.matches('.choices')) {
             index++;
             displayQuestions(index);
-        } else if (userChoice.textContent === questions[index].answer.textContent) {
+        } 
+
+        if (userChoice.textContent === questions[index].answer) {
             score++;
             scoreEl.textContent = `Score: ${score}`
         }
+
+        if (userChoice.textContent === questions[index].answer) {
+            console.log(`true`)
+        }
+
+        if (index > questions.length) {
+            questionsArea.textContent = `Done! Your final score is ${score}/3`;
+            choice1.textContent = ``;
+            choice2.textContent = ``;
+            choice3.textContent = ``; 
+            choice4.textContent = ``;
+        }
+
+        console.log(score)
     }
 
-    if (index > questions.length) {
-        questionsArea.textContent = `Done! Your final score is ${score}/3`;
-        choice1.textContent = ``;
-        choice2.textContent = ``;
-        choice3.textContent = ``; 
-        choice4.textContent = ``;
-    }
 }
 
 
