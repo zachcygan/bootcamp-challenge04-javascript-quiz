@@ -33,7 +33,7 @@ header {
     background-color: var(--smoke);
     width: 80%;
     float: left;
-    height: 50vh;
+    /* height: 40vh; */
 }
 
 #questions {
@@ -126,7 +126,9 @@ header {
     background-color: var(--yellow);
 }
 
-form {
+.scoresContainer {
+    display: flex;
+    justify-content: center;
     padding: 2%;
     background-color: white;
     border: 3px var(--purp) solid;
@@ -135,4 +137,16 @@ form {
 
 .hide {
     display: none;
+}
+
+/* #h2Container {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    border-bottom: 4px solid;
+    border-color: var(--purp);
+} */
+
+h2 {
+
 }
