@@ -101,6 +101,7 @@ submitButton.addEventListener(`click`, function(event) {
     }
     highScoresArr.push(scoreOb);
     localStorage.setItem(`highScoresArr`, JSON.stringify(highScoresArr));
+    console.log(highScoresArr)
     displayScores();
 })
 
@@ -109,13 +110,14 @@ function displayScores() {
     console.log(highScoresArr);
     
     for (var i = 0; i < highScoresArr.length; i++ ) {
+        console.log(highScoresArr[i])
         var scores = highScoresArr[i];
     
         var li = document.createElement('li');
-        li.textContent = `Initials: ${Scores[i]} - Score: ${scoreOb.score}`;
+        li.textContent = `Initials: ${scoreOb.initials} - Score: ${scoreOb.score}`;
 
         ulEl.appendChild(li);
-        console.log(ulEl);
+        console.log(li);
     }
 }
 
