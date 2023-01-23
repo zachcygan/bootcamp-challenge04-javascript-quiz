@@ -127,17 +127,50 @@ header {
 }
 
 .scoresContainer {
-    display: flex;
-    justify-content: center;
     padding: 2%;
+    text-align: center;
     background-color: white;
     border: 3px var(--purp) solid;
     /* position: absolute; */
 }
 
+form {
+    max-height: 1vh;
+
+}
+
+#scoreList {
+    align-self: center;
+}
+
 .hide {
     display: none;
 }
+
+#highScores {
+    font-size: 3rem;
+    color: var(--purp);
+    /* background-color: var(--purp); */
+    border-bottom: 2px solid ;
+}
+
+#highScores:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#highScores:active {
+    transform: scale(.98);
+}
+
+li {
+    text-align: center;
+    list-style: inside;
+    list-style-type: auto;
+    /* display: inline-block; */
+}
+
+
 
 /* #h2Container {
     display: flex;
@@ -146,7 +179,3 @@ header {
     border-bottom: 4px solid;
     border-color: var(--purp);
 } */
-
-h2 {
-
-}

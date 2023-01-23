@@ -10,9 +10,7 @@
 
     <body>
         <header>
-            <a href="/scores.html">
-                <div id="highScores">High Scores</div>
-            </a>
+            <div id="highScores">High Scores</div>
             <div id="score">Score: </div>
             <div id="time"></div>
         </header>
@@ -34,16 +32,19 @@
             <div class="choices" id="choice4"></div>
         </div>
 
-        <div id='scoresContainer'class="scoresContainer hide">
-            <form class="hide" id="highScoreForm">
+        <div id='scoresContainerID'class="scoresContainer hide">
+            <form id="highScoreForm">
                 <label for="initials">initials</label>
                 <input type="text" id="initials">
                 <button type="submit" id="submitButton">Submit</button>
+                <button id="clearScoreButton">Clear Scores</button>
             </form>
-            
-            <ul class="score-list">
-            
-            </ul>
+
+            <div id="scoreList">
+                <ol class="score-list">
+                
+                </ol>
+            </div>
         </div>
 
         <footer>
