@@ -114,7 +114,7 @@ function displayScores() {
         var scores = highScoresArr[i];
     
         var li = document.createElement('li');
-        li.textContent = `Initials: ${scoreOb.initials} - Score: ${scoreOb.score}`;
+        li.textContent = `Initials: ${scores.initials} - Score: ${scores.score}`;
 
         ulEl.appendChild(li);
         console.log(li);
