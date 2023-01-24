@@ -92,11 +92,11 @@ header {
     display: flex;
     justify-content: start;
     align-items: center;
-    font-size: 60px;
+    font-size: 2rem;
     margin: 1%;
     color: white;
     background-color: blue;
-    width: 45%;
+    width: 47%;
     height: 200px;
     border-radius: 12px;
     padding-left: 1%;
@@ -136,7 +136,7 @@ header {
 
 form {
     max-height: 1vh;
-
+    margin-bottom: 3rem;
 }
 
 #scoreList {
@@ -163,19 +163,83 @@ form {
     transform: scale(.98);
 }
 
+form #initials {
+     font-size: 1.5rem;
+}
+
+label {
+    font-size: 1.5rem;
+}
+
+#submitButton,
+#clearScoreButton {
+    color: white;
+    background-color: var(--purp);
+    font-size: 1rem;
+    width: 20%;
+    padding: 1%;
+    margin-bottom: 1%;
+    border-radius: 12px;
+}
+
+#submitButton:hover,
+#clearScoreButton:hover {
+    cursor: pointer;
+}
+
+#submitButton:active,
+#clearScoreButton:active {
+    transform: scale(.98);
+}
+
 li {
     text-align: center;
     list-style: inside;
     list-style-type: auto;
-    /* display: inline-block; */
+    font-size: 3rem;
+
 }
 
+@media only screen and (max-width: 320px) {
+    .aside {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        float: center;
+        padding-top: 1rem;
+    }
 
+    #startButton,
+    #reset,
+    #stopButton {
+        display: block;
+        color: white;
+        background-color: var(--purp);
+        font-size: 2rem;
+        width: 100%;
+        padding: 1%;
+        margin-bottom: 1%;
+        border-radius: 12px;
+    }
 
-/* #h2Container {
-    display: flex;
-    justify-content: center;
-    font-size: 2rem;
-    border-bottom: 4px solid;
-    border-color: var(--purp);
-} */
+    #questions {
+        padding-top: .5rem;
+        padding-left: 1rem;
+        font-size: 2rem;
+        width: 100%;
+        height: 30vh;
+    }
+
+    #highScores,
+    #time,
+    #score {
+        font-size: 1rem;
+
+    }
+
+    .choices {
+        font-size: 1rem;
+        justify-content: baseline;
+    }
+}
