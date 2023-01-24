@@ -20,7 +20,7 @@ var olEl = document.querySelector('.score-list');
 // if there is no local storage, give an empty array
 var highScoresArr = JSON.parse(localStorage.getItem(`highScoresArr`)) || [];
 var timeInterval;
-var timeRemaining = 60;
+var timeRemaining = 90;
 time.textContent = `Time: ${timeRemaining}`;
 
 
@@ -361,6 +361,8 @@ function displayQuestions(index) {
 submitButton.addEventListener(`click`, function(event) {
     event.preventDefault();
     var initials = document.getElementById(`initials`).value.trim();
+    initials.toUpperCase();
+    console.log(initials);
     var scoreOb = {
         initials, score
     }
@@ -406,6 +408,7 @@ function displayScores() {
 // used https://code.mu/en/javascript/book/prime/timers/stop-button/ for stopping interval in different 
 // function while making the var global
 function startTimer() {
+    resetTimer();
     if (viewingScores) {
         document.getElementById(`scoresContainerID`).classList.add(`hide`);
         choice1.classList.remove(`hide`);
@@ -465,8 +468,8 @@ function resetTimer() {
     questionsArea.textContent = `When you are ready, click the start button to begin.`;
     clearInterval(timeInterval);
 
-    timeRemaining = 60;
-    time.textContent = `Time: 60`;
+    timeRemaining = 90;
+    time.textContent = `Time: 90`;
 
     choice1.textContent = '';
     choice2.textContent = '';
@@ -477,6 +480,7 @@ function resetTimer() {
     score = 0;
 }
 
+// whenever the user clicks an answer, the next question will be displayed
 function nextQuestion(event) {
     if (playing) {
         var userChoice = event.target;
@@ -485,6 +489,8 @@ function nextQuestion(event) {
             if (userChoice.textContent == correctAnswers[index]) {
                 score++;
                 scoreEl.textContent = `Score: ${score}`
+            } else {
+                timeRemaining--;
             }
             index++;
             displayQuestions(index);
