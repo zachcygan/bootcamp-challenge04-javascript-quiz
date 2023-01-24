@@ -52,14 +52,14 @@ var questions = [
     },
 
     {
-        question: `What is the correct JavaScript syntax to change the content of the HTML element below?`,
+        question: `How do you write "Hello World" in an alert box`,
         choice: {
-            1: `document.getElement("p").innerHTML = "Hello World!";`,
-            2: `document.getElementById("demo").innerHTML = "Hello World!";`,
-            3: `document.getElementByName("p").innerHTML = "Hello World!";`,
-            4: `#demo.innerHTML = "Hello World!";`,
+            1: `msg("Hello World");`,
+            2: `alert("Hellow World");`,
+            3: `msgBox("Hello World");`,
+            4: `alertBox("Hello World");`,
         },
-        answer: `document.getElementById("demo").innerHTML = "Hello World!";`
+        answer: `alert("Hellow World");`
     },
 
     {
@@ -233,14 +233,14 @@ var questions = [
     },
     
     {
-        question: `What is the correct JavaScript syntax for opening a new window called "w2"?`,
+        question: `How to write an IF statement for executing some code if "i" is NOT equal to 5?`,
         choice: {
-            1: `w2 = window.new("http://www.w3schools.com");`,
-            2: `w2 = window.o("http://www.w3schools.com");`,
-            3: `w2 = window.please("http://www.w3schools.com");`,
-            4: `w2 = window.open("http://www.w3schools.com");`,
+            1: `if i<>5`,
+            2: `if (i != 5)`,
+            3: `document.write("Hello World");`,
+            4: `response.write("Hello World");`,
         },
-        answer: `w2 = window.open("http://www.w3schools.com");`
+        answer: `if (i != 5)`
     },
     
     {
@@ -429,6 +429,8 @@ function startTimer() {
                 startButton.disabled = false; 
                 time.textContent = `Time: 0`
                 clearInterval(timeInterval)
+                questionsArea.textContent = `Time ran out. Your final score is ${score}/${questions.length}`;
+
             }
         }, 1000);
     }
