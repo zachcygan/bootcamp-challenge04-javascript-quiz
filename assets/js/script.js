@@ -103,6 +103,7 @@ function displayQuestions(index) {
         playing = false;
         viewingScores = true;
 
+        // clears the li elements inside the olEl so it does not duplicate
         if (olEl.children.length > 0) {
             while (olEl.firstChild) {
                 olEl.removeChild(olEl.firstChild)
