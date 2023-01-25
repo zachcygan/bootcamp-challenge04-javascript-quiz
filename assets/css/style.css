@@ -246,11 +246,20 @@ li {
     }
 
     .choices {
-        display: flex;
-        flex-wrap: wrap;
-        text-align: baseline;
         font-size: 1rem;
     }
+
+    form {
+        padding-bottom: 3rem;
+    }
+
+    form #initials {
+        font-size: 1rem;
+   }
+   
+   label {
+       font-size: 1rem;
+   }
 
     #submitButton,
     #clearScoreButton {

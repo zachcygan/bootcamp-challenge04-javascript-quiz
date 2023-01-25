@@ -387,6 +387,7 @@ clearScoresButton.addEventListener('click', function(event) {
     highScoresArr = [];
 })
 
+// pulls the data from local storage 
 function displayScores() {
     console.log(highScoresArr);
     var highScoresArr = JSON.parse(localStorage.getItem(`highScoresArr`));
@@ -409,6 +410,7 @@ function displayScores() {
 // function while making the var global
 function startTimer() {
     resetTimer();
+    // allows the user to start the game from viewing the high scores
     if (viewingScores) {
         document.getElementById(`scoresContainerID`).classList.add(`hide`);
         choice1.classList.remove(`hide`);
@@ -419,6 +421,7 @@ function startTimer() {
         viewingScores = false;
     }
 
+    // ensures that the start button only works if the user is not already playing the game
     if (!playing) {
         displayQuestions(index);
         playing = true;
@@ -439,6 +442,7 @@ function startTimer() {
     }
 };
 
+// pauses the timer
 function stopTimer() {
 	clearInterval(timeInterval);
     playing = false;
